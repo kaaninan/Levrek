@@ -19,7 +19,7 @@
     "request": "^2.76.0"
   },
   "bin": {
-    "levrek": "levrek.js"
+    "levrek": "./bin/levrek.js"
   },
   "devDependencies": {},
   "repository": {
