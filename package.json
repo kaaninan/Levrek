@@ -1,0 +1,33 @@
+{
+  "name": "levrek",
+  "version": "0.0.1",
+  "description": "Levrek is a github-cli.",
+  "main": "src/levrek.js",
+  "scripts": {
+    "test": "cd test && mocha"
+  },
+  "keywords": [
+    "levrek",
+    "github",
+    "cli"
+  ],
+  "author": "omerraker <omerraker@yahoo.com>",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "request": "^2.76.0"
+  },
+  "bin": {
+    "levrek": "levrek.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omerraker/Levrek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omerraker/Levrek/issues"
+  },
+  "homepage": "https://github.com/omerraker/Levrek#readme"
+}
