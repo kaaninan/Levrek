@@ -1,6 +1,6 @@
 'use strict';
 
-let colors = require('colors');
+let colors = require('chalk');
 var program = require('commander');
 var request = require('request');
 
@@ -10,7 +10,7 @@ program
   .parse(process.argv);
 
 if (!program.user) {
-  console.error('Enter username!'.red);
+  console.error(colors.red('Enter a username!'));
   return;
 }
 
@@ -26,7 +26,7 @@ request.header = {'User-Agent':'omerraker'}
 request(options,function (error, response, body) {
 
   if (error || response.statusCode !== 200) {
-    console.error('Failed, try again!'.red);
+    console.error(colors.red('Failed, try again!'));
     return;
   }
 
@@ -34,9 +34,9 @@ request(options,function (error, response, body) {
   console.log('Repository count: '+ parsedData.length);
   for (let a of parsedData) {
     console.log('');
-    console.log('Repository Name: '.red + a.name.blue);
-    console.log('Stargazers Count: '.red + a.stargazers_count.toString().red);
+    console.log(colors.red('Repository Name: ') + colors.blue(a.name));
+    console.log(colors.red('Stargazers Count: ') + colors.blue(a.stargazers_count.toString()));
     console.log('');
-    console.log('__________________'.white);
+    console.log(colors.white('__________________'));
   }
 });

@@ -14,7 +14,7 @@
   "author": "omerraker <omerraker@yahoo.com>",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.1.2",
+    "chalk": "^1.1.3",
     "commander": "^2.9.0",
     "request": "^2.76.0"
   },
