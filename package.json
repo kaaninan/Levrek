@@ -1,6 +1,6 @@
 {
   "name": "levrek",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Levrek is a github-cli.",
   "main": "src/levrek.js",
   "scripts": {

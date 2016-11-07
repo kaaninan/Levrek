@@ -50,6 +50,7 @@
       console.log(colors.red('Repository Name: ') + colors.blue(a.name));
       console.log(colors.red('Stargazers Count: ') + colors.blue(a.stargazers_count.toString()));
       console.log(colors.red('Last Update: ') + colors.blue(dateFormat(a.updated_at, "yyyy-mm-dd hh:MM:ss")));
+      console.log(colors.red('Link: ') + colors.blue.underline(a.html_url));
       console.log('');
       console.log(colors.white('__________________'));
     }
