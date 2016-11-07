@@ -5,6 +5,7 @@
   let colors = require('chalk');
   let program = require('commander');
   let request = require('request');
+  let dateFormat = require('dateformat');
 
   program
     .version(require('../package.json').version)
@@ -48,7 +49,7 @@
       console.log('');
       console.log(colors.red('Repository Name: ') + colors.blue(a.name));
       console.log(colors.red('Stargazers Count: ') + colors.blue(a.stargazers_count.toString()));
-      console.log(colors.red('Last Update: ') + colors.blue(a.updated_at.toString()));
+      console.log(colors.red('Last Update: ') + colors.blue(dateFormat(a.updated_at, "yyyy-mm-dd hh:MM:ss")));
       console.log('');
       console.log(colors.white('__________________'));
     }
