@@ -21,7 +21,12 @@ Easy-to use
 $ levrek -u <username>
 ```
 
-Like: 
+Short by last updated time
+```
+$ levrek -u <username> -s
+```
+
+Like:
 ```sh
 $ levrek -u omerraker
 ```

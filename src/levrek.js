@@ -9,6 +9,7 @@
   program
     .version(require('../package.json').version)
     .option('-u, --user <username>','username (user)')
+    .option('-s, --short','short by last update date')
     .parse(process.argv);
 
   if (!program.user) {
@@ -22,6 +23,8 @@
     }
   };
 
+  let isShort = program.short ? true : false;
+
   options.url = 'https://api.github.com/users/' + program.user + '/repos';
   request.header = {'User-Agent':'omerraker'};
 
@@ -33,11 +36,19 @@
     }
 
     let parsedData = JSON.parse(body);
+
+    if(isShort == true){
+      parsedData.sort(function(a,b){
+        return new Date(a.updated_at) - new Date(b.updated_at);
+      });
+    }
+
     console.log('Repository count: '+ parsedData.length);
     for (let a of parsedData) {
       console.log('');
       console.log(colors.red('Repository Name: ') + colors.blue(a.name));
       console.log(colors.red('Stargazers Count: ') + colors.blue(a.stargazers_count.toString()));
+      console.log(colors.red('Last Update: ') + colors.blue(a.updated_at.toString()));
       console.log('');
       console.log(colors.white('__________________'));
     }
